@@ -19,13 +19,14 @@ class QR:
         self.img = self.code.make_image(fill_color='black', back_color='white')
 
     def save(self, filename):
-        self.img.save(filename)
+        self.img.save(f'./out/{filename}')
 
 def main():
 
-    qr = QR('This is some text data.')
-    qr.make()
-    qr.save('./out/sample.png')
+    qr = QR('This is some text data.', box_size=8, border=2,
+            version=5, error_correction=ERROR_CORRECT_L)
+    qr.make(fit=False)
+    qr.save('sample_version_5.png')
 
 if __name__ == "__main__":
     main()
