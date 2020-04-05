@@ -1,10 +1,10 @@
 import qrcode
-from qrcode.constants import ERROR_CORRECT_L
+from qrcode.constants import ERROR_CORRECT_Q
 
 class QR:
 
     def __init__(self, data, box_size=10, border=4,
-                 error_correction=ERROR_CORRECT_M, version=None):
+                 error_correction=ERROR_CORRECT_Q, version=None):
         self.code = qrcode.QRCode(
             version=version,
             error_correction=error_correction,
