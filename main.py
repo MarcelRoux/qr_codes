@@ -1,28 +1,11 @@
 from qr import QR
 from logo import LogoRound
+import json
 
-resources = {
-    'github': {
-        'qr_filename': 'github.png',
-        'logo_filename': 'github.png',
-        'logo': './icons/GitHub-Mark-120px-plus.png',
-        'url': 'https://github.com/MarcelRoux',
-        'colour': '#171516',
-        'add_logo_background': True,
-        'logo_background_fill': 'white',
-        'box_size': 8
-    },
-    'linked_in': {
-        'qr_filename': 'linkedin.png',
-        'logo_filename': 'linkedin.png',
-        'logo': './icons/linkedin_logo_512.png',
-        'url': 'https://www.linkedin.com/in/rouxmarcel/',
-        'colour': '#0077B5',
-        # 'add_logo_background': True,
-        # 'logo_background_fill': 'white',
-        'box_size': 32
-    }
-}
+
+with open('./data.json', 'r') as f:
+    resources = json.load(f)
+
 
 def main():
 
