@@ -54,9 +54,13 @@ class QR:
 
 def main():
 
+    print('Starting QR creation.')
+    filename = 'sample_version_5.png'
     qr = QR('This is some text data.', box_size=8, border=2,
             version=5, error_correction=ERROR_CORRECT_L)
     qr.make(fit=False)
+    output = qr.save(filename)
+    print(f'File saved: {output}')
 
 
 if __name__ == "__main__":
