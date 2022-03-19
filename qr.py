@@ -4,6 +4,8 @@ from qrcode.constants import ERROR_CORRECT_L, ERROR_CORRECT_Q
 
 class QR:
 
+    output_dir = './out'
+
     def __init__(self, data, box_size=10, border=4,
                  error_correction=ERROR_CORRECT_Q, version=None):
         self.code = qrcode.QRCode(
@@ -45,6 +47,9 @@ class QR:
         self.img.paste(logo, (offset_w, offset_h), mask=logo)
 
     def save(self, filename):
+        output = f'{self.output_dir}/{filename}'
+        self.img.save(output)
+        return output
 
 
 def main():
