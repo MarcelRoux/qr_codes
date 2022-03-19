@@ -1,12 +1,13 @@
 from PIL import Image, ImageDraw
 
+
 class LogoRound:
 
     def __init__(self, logo_filename, offset=4):
         # Open logo file.
         self.img = Image.open(logo_filename).convert('RGBA')
         self.offset = offset
-    
+
     def add_logo_background(self, background_fill='white'):
         # Get logo size.
         img_w, img_h = self.img.size
@@ -20,6 +21,7 @@ class LogoRound:
         bottom_right = (img_w - self.offset, img_h - self.offset)
         bounding_box = [top_left, bottom_right]
 
+
         # Add non-transparent circle to background.
         ImageDraw.Draw(background).ellipse(bounding_box, fill=background_fill)
 
@@ -29,10 +31,10 @@ class LogoRound:
         self.img = background
 
         self.img = background
-    
+
     def get_logo_size(self):
         return self.img.size
-    
+
     def save(self, filename):
         self.img.save(f'./icons/{filename}')
 
@@ -44,6 +46,8 @@ def main():
     logo = LogoRound(logo_filename)
     logo.add_logo_background()
     logo.save('github.png')
+
+
 
 if __name__ == "__main__":
     main()
