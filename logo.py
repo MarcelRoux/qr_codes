@@ -13,22 +13,23 @@ class LogoRound:
         img_w, img_h = self.img.size
         radius = img_w // 2
 
-        # Create transparent background.
-        background = Image.new('RGBA', (img_w, img_h), (255, 255, 255, 0))
-
         # Calculate bounding box and reduce diameter of circle by offset.
-        top_left = (0 + self.offset,  + self.offset)
+        top_left = (0, 0)
         bottom_right = (img_w - self.offset, img_h - self.offset)
         bounding_box = [top_left, bottom_right]
 
+        # Create transparent background.
+        background = Image.new('RGBA',
+                               (bottom_right[0], bottom_right[1]),
+                               (255, 255, 255, 0))
 
         # Add non-transparent circle to background.
         ImageDraw.Draw(background).ellipse(bounding_box, fill=background_fill)
 
         # Overlay logo on background.
-        background.paste(self.img, (0, 0), mask=self.img)
-
-        self.img = background
+        background.paste(self.img,
+                         (-self.offset//2, -self.offset//2),
+                         mask=self.img)
 
         self.img = background
 
