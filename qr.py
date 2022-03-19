@@ -1,6 +1,7 @@
 import qrcode
 from qrcode.constants import ERROR_CORRECT_L, ERROR_CORRECT_Q
 
+
 class QR:
 
     def __init__(self, data, box_size=10, border=4,
@@ -13,7 +14,7 @@ class QR:
         )
 
         self.data = data
-    
+
     def make(self, fit=True, fill_color='black', back_color='white'):
         self.fit = fit
         self.fill_color = fill_color
@@ -22,8 +23,9 @@ class QR:
         self.code.clear()
         self.code.add_data(self.data)
         self.code.make(fit=fit)
-        self.img = self.code.make_image(fill_color=fill_color, back_color=back_color)
-    
+        self.img = self.code.make_image(fill_color=fill_color,
+                                        back_color=back_color)
+
     def add_logo(self, logo):
         logo = logo.convert('RGBA')
 
@@ -43,14 +45,14 @@ class QR:
         self.img.paste(logo, (offset_w, offset_h), mask=logo)
 
     def save(self, filename):
-        self.img.save(f'./out/{filename}')
+
 
 def main():
 
     qr = QR('This is some text data.', box_size=8, border=2,
             version=5, error_correction=ERROR_CORRECT_L)
     qr.make(fit=False)
-    qr.save('sample_version_5.png')
+
 
 if __name__ == "__main__":
     main()
