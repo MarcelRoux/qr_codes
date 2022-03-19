@@ -1,0 +1,32 @@
+{
+    "github": {
+        "qr_filename": "github.png",
+        "logo_filename": "github.png",
+        "logo": "./icons/GitHub-Mark-120px-plus.png",
+        "url": "https://github.com/MarcelRoux",
+        "colour": "#171516",
+        "add_logo_background": true,
+        "logo_background_fill": "white",
+        "box_size": 8,
+        "offset": 2
+    },
+    "linked_in": {
+        "qr_filename": "linkedin.png",
+        "logo_filename": "linkedin.png",
+        "logo": "./icons/linkedin_logo_512.png",
+        "url": "https://www.linkedin.com/in/rouxmarcel/",
+        "colour": "#0077B5",
+        "box_size": 32
+    },
+    "mail": {
+        "qr_filename": "mail.png",
+        "logo_filename": "mail.png",
+        "logo": "./icons/mail_sample_white.png",
+        "url": "mailto: marcel.roux.email@gmail.com?subject=I%20like%20your%20CV&body=I%20found%20your%20CV%20impressive%20and%20wished%20to%20reach%20out.",
+        "colour": "#646464",
+        "add_logo_background": true,
+        "logo_background_fill": "#646464",
+        "box_size": 32,
+        "offset": -256
+    }
+}
