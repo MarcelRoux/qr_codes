@@ -40,14 +40,25 @@ class LogoRound:
         self.img.save(f'./icons/{filename}')
 
 
-
-def main():
+def create_github_logo():
     logo_filename = './icons/GitHub-Mark-120px-plus.png'
 
     logo = LogoRound(logo_filename)
     logo.add_logo_background()
     logo.save('github.png')
 
+
+def create_mail_logo():
+    logo_filename = './icons/mail_sample.png'
+
+    logo = LogoRound(logo_filename, offset=-72)
+    logo.add_logo_background()
+    logo.save('mail.png')
+
+
+def main():
+    create_github_logo()
+    create_mail_logo()
 
 
 if __name__ == "__main__":
